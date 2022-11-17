@@ -1,14 +1,10 @@
-import Content from "./components/Content";
-import { Footer } from "./components/Footer";
-import { Header } from "./components/Header";
+import AppRouter from "./app-router/AppRouter";
+import "./App.css"
 
 function App() {
   return (
-    <div className="App" style={{backgroundColor: "grey", scale:"0.95"}}>
-      <h1>hello react</h1>
-      <Header/>
-      <Content/>
-      <Footer/>
+    <div className="App" >
+      <AppRouter/>
     </div>
   );
 }

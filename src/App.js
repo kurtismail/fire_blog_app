@@ -1,26 +1,16 @@
+import AppRouter from "./approuter/AppRouter";
+import { AuthProvider } from "./contexts/AuthContext";
+import { BlogProvider } from "./contexts/BlogContext";
 import { ToastContainer } from "react-toastify";
-import "./App.css";
-import AuthContextProvider from "./contexts/AuthContext";
-import AppRouter from "./router/AppRouter";
-import { colors, createTheme } from "@mui/material";
-import { ThemeProvider } from "@emotion/react";
-
-const theme = createTheme({
-  palette: {
-    success: {
-      main: colors.teal[800],
-    },
-  },
-});
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <AuthContextProvider>
+    <AuthProvider>
+      <BlogProvider>
         <AppRouter />
         <ToastContainer />
-      </AuthContextProvider>
-    </ThemeProvider>
+      </BlogProvider>
+    </AuthProvider>
   );
 }
 
